@@ -1,9 +1,0 @@
-- hosts: 13.234.118.2
-  become: true
-  tasks:
-   - name: Simple GET operation
-     aws_s3:
-       bucket: phani-kube.in #replace with your bucket name
-       object: target #replace with your artifat name
-       dest: /usr/local/target #replace with your destination where you want the artifact
-       mode: get
