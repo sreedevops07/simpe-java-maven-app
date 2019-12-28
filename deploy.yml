@@ -3,7 +3,7 @@
   tasks:
    - name: Simple GET operation
      aws_s3:
-       bucket: artifactstore9 #replace with your bucket name
-       object: myfile.zip #replace with your artifat name
-       dest: /usr/local/myfile.zip #replace with your destination where you want the artifact
+       bucket: phani-kube.in #replace with your bucket name
+       object: target #replace with your artifat name
+       dest: /usr/local/target #replace with your destination where you want the artifact
        mode: get
