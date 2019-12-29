@@ -1,0 +1,9 @@
+- hosts: testing
+  become: true
+  tasks:
+   - name: Simple GET operation
+     aws_s3:
+       bucket: phani-artifact.in
+       object: target/webapp.war
+       dest: /usr/local/webapp.war
+       mode: get
