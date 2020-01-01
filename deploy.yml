@@ -7,3 +7,9 @@
        object: target/webapp.war
        dest: /usr/local/webapp.war
        mode: get
+  - name: building and running docker image
+    shell: |
+      sudo apt-get update -y
+      docker build -t phani9-devops
+      docker run -it phani9-devops /bin/bash
+  
