@@ -8,7 +8,6 @@
        dest: /usr/local/webapp.war
        mode: get
    - name: Build  image 
-    shell: |
+     shell: |
       sudo apt-get update -y
       docker build -t phani9-devops
-      docker run -it phani9-devops /bin/bash
