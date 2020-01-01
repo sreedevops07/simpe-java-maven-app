@@ -1,4 +1,7 @@
-  - name: Simple GET operation
+- hosts: all
+  become: true
+  tasks:
+   - name: Simple GET operation
      aws_s3:
        bucket: phani-artifact.in
        object: target/webapp.war
