@@ -5,7 +5,7 @@
      aws_s3:
        bucket: phani-artifact.in
        object: target/webapp.war
-       dest: /usr/local/webapp.war
+       dest: /root/webapp.war
        mode: get
    - name: Build  image 
      shell: |
