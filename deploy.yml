@@ -9,5 +9,4 @@
        mode: get
    - name: Build  image 
      shell: |
-      sudo apt-get update -y
       docker build -t phani9-devops
