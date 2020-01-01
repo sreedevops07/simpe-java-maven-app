@@ -1,15 +1,11 @@
-- hosts: all
-  become: true
-  tasks:
-   - name: Simple GET operation
+  - name: Simple GET operation
      aws_s3:
        bucket: phani-artifact.in
        object: target/webapp.war
        dest: /usr/local/webapp.war
        mode: get
-   - name: building and running docker image
+   - name: Build  image 
     shell: |
       sudo apt-get update -y
       docker build -t phani9-devops
       docker run -it phani9-devops /bin/bash
-  
