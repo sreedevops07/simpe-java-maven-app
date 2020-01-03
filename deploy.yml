@@ -9,7 +9,7 @@
        mode: get
    - name: Path
      shell: |
-      pwd    
+      echo pwd    
    - name: Build  image 
      shell: |
       docker build -t phani9-devops .
