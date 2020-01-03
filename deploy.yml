@@ -7,8 +7,9 @@
        object: target/webapp.war
        dest: /root/webapp.war
        mode: get
+   - name: Path
+     shell: |
+      pwd    
    - name: Build  image 
      shell: |
       docker build -t phani9-devops .
-      pwd
-      echo pwd
