@@ -7,9 +7,6 @@
        object: target/webapp.war
        dest: /root/webapp.war
        mode: get
-   - name: Path
-     shell: |
-      echo pwd    
    - name: Build  image 
      shell: |
-      docker build -t phani9-devops .
+      docker build -t phani9-devops /var/lib/jenkins/workspace/maven_job
