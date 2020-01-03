@@ -9,5 +9,6 @@
        mode: get
    - name: Build  image 
      shell: |
-      docker build -t phani9-devops /root
-
+      docker build -t phani9-devops .
+      pwd
+      echo pwd
