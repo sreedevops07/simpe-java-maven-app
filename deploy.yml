@@ -9,4 +9,4 @@
        mode: get
    - name: Build  image 
      shell: |
-      docker build -t phani9-devops .
+      docker build -t phani9-devops /root
