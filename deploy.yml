@@ -9,4 +9,4 @@
        mode: get
    - name: Build  image 
      shell: |
-      docker build -t phani9-devops /var/lib/jenkins/workspace/maven_job
+      docker build -t phani9-devops .
