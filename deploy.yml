@@ -9,4 +9,7 @@
        mode: get
    - name: Build  image 
      shell: |
-      docker build -t phani9-devops /root
+      docker build -t phani9-devops .
+      docker run -d --name phani-c1 -p 8080:8080 phani9-devops
+     args:
+      chdir:/root
