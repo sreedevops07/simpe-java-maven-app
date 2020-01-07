@@ -4,7 +4,7 @@
    - name: Simple GET operation
      aws_s3:
        bucket: phani-artifact.in
-       object: target/webapp.war
+       object: webapp.war
        dest: /root/webapp.war
        mode: get
    - name: Build  image 
