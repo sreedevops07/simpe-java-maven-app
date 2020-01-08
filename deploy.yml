@@ -19,8 +19,8 @@
    - name: Log into DockerHub
      docker_login:
       username: phanirudra9
-      password: 9eb876d4@A 
-      email: lprudra9@gmail.com
+      password: 9eb876d4@A
+      email: lprudra9@gmail.com   
    
    - name: remove docker image
      shell: |
@@ -36,3 +36,13 @@
       
    - name: Push image to docker hub
      command: docker push phanirudra9/phani9-devops
+
+   - name: remove docker image
+     shell: |
+      docker rmi phani9-devops:latest phanirudra9/phani9-devops
+      docker rmi phani9-devops:latest
+      docker rmi tomcat
+     ignore_errors: yes
+
+   - name: Pull image from docker hub
+     command: docker pull phanirudra9/phani9-devops:latest
