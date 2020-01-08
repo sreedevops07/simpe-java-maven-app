@@ -8,7 +8,7 @@
        dest: /root/webapp.war
        mode: get
 
-   - name: Stop cureent running container
+   - name: Stop current running container
      command: docker stop phani-c1
      ignore_errors: yes
 
@@ -17,10 +17,13 @@
      ignore_errors: yes   
    
    - name: remove docker image
-     command: docker rmi -f phani9-devops
+     command: docker rmi phani9-devops:latest phanirudra9/phani9-devops
      ignore_errors: yes
 
-   - name: Build and run docker image using war file
+   - name: Build and tag docker image using war file to push it to docker hub and pull it and run the conatiner
      shell: |
       docker build -t phani9-devops /root
-      docker run -d --name phani-c1 -p 80:8080 phani9-devops
+      docker tag phani9-devops phanirudra9/phani9-devops
+      docker push phanirudra9/phani9-devops
+      docker pull phanirudra9/phani9-devops:latest
+      docker run -d --name phani-c1 -p 80:8080 phanirudra9/phani9-devops:latest
