@@ -40,6 +40,7 @@
    - name: remove docker image
      shell: |
       docker rmi phani9-devops:latest phanirudra9/phani9-devops
+      docker rmi tomcat
      ignore_errors: yes
 
    - name: Pull image from docker hub
