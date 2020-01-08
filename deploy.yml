@@ -18,8 +18,9 @@
 
    - name: Log into DockerHub
      docker_login:
-      username: lprudra9@gmail.com
-      password: 9eb876d4@A   
+      username: phanirudra9
+      password: 9eb876d4@A 
+      email: lprudra9@gmail.com
    
    - name: remove docker image
      shell: |
