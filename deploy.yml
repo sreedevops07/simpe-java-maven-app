@@ -14,7 +14,12 @@
 
    - name: Remove stopped container
      command: docker rm phani-c1
-     ignore_errors: yes   
+     ignore_errors: yes
+
+   - name: Log into DockerHub
+     docker_login:
+      username: phanirudra9
+      password: 9eb876d4@A   
    
    - name: remove docker image
      shell: |
