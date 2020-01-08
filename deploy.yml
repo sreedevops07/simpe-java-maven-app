@@ -17,7 +17,9 @@
      ignore_errors: yes   
    
    - name: remove docker image
-     command: docker rmi phani9-devops:latest phanirudra9/phani9-devops
+     shell: |
+      docker rmi phani9-devops:latest
+      docker rmi phani9-devops:latest phanirudra9/phani9-devops
      ignore_errors: yes
 
    - name: Build and tag docker image using war file to push it to docker hub and pull it and run the conatiner
