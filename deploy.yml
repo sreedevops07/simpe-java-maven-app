@@ -23,10 +23,10 @@
       docker rmi tomcat
      ignore_errors: yes
 
-   - name: Build and tag docker image using war file to push it to docker hub and pull it and run the conatiner
+   - name: Build and tag docker image using war file
      shell: |
       docker build -t phani9-devops /root
       docker tag phani9-devops phanirudra9/phani9-devops
-      docker push phanirudra9/phani9-devops
-      docker pull phanirudra9/phani9-devops:latest
-      docker run -d --name phani-c1 -p 80:8080 phanirudra9/phani9-devops:latest
+      
+   - name: Push image to docker hub
+     command: docker push phanirudra9/phani9-devops
