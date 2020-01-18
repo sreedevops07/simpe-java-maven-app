@@ -1,13 +1,6 @@
 - hosts: all
   become: true
   tasks:
-   - name: Simple GET operation
-     aws_s3:
-       bucket: phani-artifact.in
-       object: webapp.war
-       dest: /root/webapp.war
-       mode: get
-
    - name: Log into DockerHub
      docker_login:
       username: phanirudra9
