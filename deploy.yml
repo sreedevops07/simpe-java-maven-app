@@ -10,5 +10,13 @@
    - name: Pull image from docker hub
      command: docker pull phanirudra9/phani9-devops:"{{buildNumber}}"
 
+   - name: Stop current running container
+     command: docker stop phani-c1
+     ignore_errors: yes
+
+   - name: Remove stopped container
+     command: docker rm phani-c1
+     ignore_errors: yes
+
    - name: Run a container from the pulled image
      command: docker run -d --name phani-c1 -p 80:8080 phanirudra9/phani9-devops:"{{buildNumber}}"
