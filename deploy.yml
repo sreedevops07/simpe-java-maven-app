@@ -18,9 +18,5 @@
      command: docker rm phani-c1
      ignore_errors: yes
 
-   - name: Remove existing images 
-     command: dokcker image rm phanirudra9/phani9-devops:"{{buildNumber}}"
-     ignore_error: yes
-
    - name: Run a container from the pulled image
      command: docker run -d --name phani-c1 -p 8080:8080 phanirudra9/phani9-devops:"{{buildNumber}}"
