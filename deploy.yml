@@ -14,7 +14,7 @@
      command: docker stop phani-c1
      ignore_errors: yes
 
-   - name: Remove stopped container
+   - name: Remove stopped containers
      command: docker rm phani-c1
      ignore_errors: yes
 
