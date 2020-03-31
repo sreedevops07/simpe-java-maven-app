@@ -1,4 +1,4 @@
-# maven-project
+# maven-project (java)
 
 Simple Maven Project
 
