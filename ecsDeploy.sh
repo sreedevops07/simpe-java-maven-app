@@ -9,7 +9,7 @@ BLUE='\e[34m'
 #Deploy Config
 REPOSITORY_URI=144711766102.dkr.ecr.ap-south-1.amazonaws.com/phani9-devops
 NETWORK_MODE="bridge"
-CLUSTER_ARN= arn:aws:ecs:ap-south-1:144711766102:cluster/phani
+CLUSTER_ARN=arn:aws:ecs:ap-south-1:144711766102:cluster/phani
 
 export AWS_PROFILE=$AWS_PROFILE_SERVER
 export AWS_DEFAULT_REGION=ap-south-1
