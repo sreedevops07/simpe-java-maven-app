@@ -1,6 +1,6 @@
 # Pull base image 
-From tomcat 
+From apache2
 
 # Maintainer 
 MAINTAINER "Phani" 
-COPY webapp/target/webapp.war /usr/local/tomcat/webapps
+COPY webapp/target/webapp.war /var/www/html/index.html
