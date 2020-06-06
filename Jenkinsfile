@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('source') {
-      steps {
-        sh 'source /root/.bash_profile'
-      }
-    }
     stage ('Initialize') {
        steps {
           sh '''
