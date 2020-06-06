@@ -1,12 +1,17 @@
 pipeline {
   agent any
   stages {
+    stage('source') {
+      steps {
+        sh 'source /root/.bash_profile'
+      }
+    }
     stage ('Initialize') {
        steps {
           sh '''
               echo "PATH = ${PATH}"
               echo "M2_HOME = ${M2_HOME}"
-              
+
               '''
             }
         }
@@ -37,5 +42,4 @@ pipeline {
     }
   }
 }
-
 
