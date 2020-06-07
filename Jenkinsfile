@@ -39,12 +39,12 @@ pipeline {
 post {
     failure {
         mail to: 'lprudra9@gmail.com',
-             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName} - ${BUILD_NUMBER}",
              body: "Something is wrong with ${env.BUILD_URL}"
     }
      success {
         mail to: 'lprudra9@gmail.com',
-             subject: "successful Pipeline: ${currentBuild.fullDisplayName}",
+             subject: "successful Pipeline: ${currentBuild.fullDisplayName} - ${BUILD_NUMBER}",
              body: "Your pipeline is success ${env.BUILD_URL}"
     }
 }
