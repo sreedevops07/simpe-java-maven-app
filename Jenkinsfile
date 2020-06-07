@@ -36,9 +36,9 @@ pipeline {
       }   
     }
     stage("Email"){
-			steps{
-				emailext (to: 'lprudra9@gmail.com', replyTo: 'lprudra9@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: "Job report - '${env.BUILD_CONTENT}'", mimeType: 'text/html');
-			}
-  }
+      steps{
+        emailext (to: '${DEFAULT_RECIPIENTS}', replyTo: '${DEFAULT_RECIPIENTS}', subject: "Email Report from - '${env.JOB_NAME}' ", body: "Job report - '${env.BUILD_CONTENT}'", mimeType: 'text/html');
+     }
+   }
 }
 }
