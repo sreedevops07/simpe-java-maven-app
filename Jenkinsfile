@@ -35,17 +35,9 @@ pipeline {
         sh 'ansible-playbook deploy.yml --extra-vars="buildNumber=$BUILD_NUMBER"'
       }   
     }
+    stage("Email"){
+			steps{
+				emailext (to: 'lprudra9@gmail.com', replyTo: 'lprudra9@gmail.com', subject: "Email Report from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
+			}
   }
-post {
-    failure {
-        mail to: 'lprudra9@gmail.com',
-             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Something is wrong with ${env.BUILD_URL}"
-    }
-     success {
-        mail to: 'lprudra9@gmail.com',
-             subject: "successful Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Your pipeline is success ${env.BUILD_URL}"
-    }
-}
 }
