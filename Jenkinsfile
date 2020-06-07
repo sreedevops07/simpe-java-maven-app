@@ -36,16 +36,12 @@ pipeline {
       }   
     }
   }
-post {
-    failure {
-        mail to: 'lprudra9@gmail.com',
-             subject: "Failed Pipeline: ${DEFAULT_SUBJECT}",
-             body: "Something is wrong with ${DEFAULT_CONTENT}"
-    }
-     success {
-        mail to: 'lprudra9@gmail.com',
-             subject: "successful Pipeline: ${DEFAULT_SUBJECT}",
-             body: "Your pipeline is success ${DEFAULT_CONTENT}"
-    }
+emailext(
+    to: 'lprudra9@gmail.com',
+    body: '${DEFAULT_CONTENT}', 
+    mimeType: 'text/html',
+    subject: '${DEFAULT_SUBJECT}',
+    replyTo: '$DEFAULT_REPLYTO'    
+    )
 }
 }
