@@ -34,11 +34,18 @@ pipeline {
       steps {
         sh 'ansible-playbook deploy.yml --extra-vars="buildNumber=$BUILD_NUMBER"'
       }   
+    }  
+}
+post {
+    failure {
+        mail to: 'lprudra9@gmail.com',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
     }
-    stage("Email"){
-      steps{
-        emailext (to: '${DEFAULT_RECIPIENTS}', replyTo: '${DEFAULT_RECIPIENTS}', subject: "Email Report from - '${env.JOB_NAME}' ", body: "Job report - '${env.BUILD_CONTENT}'", mimeType: 'text/html');
-     }
-   }
+     success {
+        mail to: 'lprudra9@gmail.com',
+             subject: "successful Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Your pipeline is success ${env.BUILD_URL}"
+    }
 }
 }
