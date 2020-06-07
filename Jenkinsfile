@@ -22,7 +22,7 @@ pipeline {
     }
     stage('logging into docker hub') {
       steps {
-        sh 'docker login --username="phanirudra9" --password="9eb876d4@A"'
+        sh 'docker login --username="phanirudra9" --password="9eb876d4@"'
       }   
     }
     stage('pushing docker image to the docker hub with build number') {
