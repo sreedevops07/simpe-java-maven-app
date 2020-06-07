@@ -22,7 +22,7 @@ pipeline {
     }
     stage('logging into docker hub') {
       steps {
-        sh 'docker login --username="phanirudra9" --password="9eb876d4@"'
+        sh 'docker login --username="phanirudra9" --password="9eb876d4@A"'
       }   
     }
     stage('pushing docker image to the docker hub with build number') {
@@ -39,8 +39,13 @@ pipeline {
 post {
     failure {
         mail to: 'lprudra9@gmail.com',
-             subject: "Pipeline Data: ${currentBuild.fullDisplayName}",
-             body: "Something is wrong with ${env.BUILD_URL}"
+             subject: "Failed Pipeline: ${DEFAULT_SUBJECT}",
+             body: "Something is wrong with ${DEFAULT_CONTENT}"
+    }
+     success {
+        mail to: 'lprudra9@gmail.com',
+             subject: "successful Pipeline: ${DEFAULT_SUBJECT}",
+             body: "Your pipeline is success ${DEFAULT_CONTENT}"
     }
 }
 }
