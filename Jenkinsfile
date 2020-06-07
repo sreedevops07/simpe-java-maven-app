@@ -44,7 +44,7 @@ post {
     }
      success {
         mail to: 'lprudra9@gmail.com',
-             subject: "successful Pipeline:  ${BUILD_NUMBER}",
+             subject: "successful Pipeline:  ${env.BUILD_NUMBER}",
              body: "Your pipeline is success ${env.BUILD_URL}"
     }
 }
