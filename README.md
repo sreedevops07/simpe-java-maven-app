@@ -26,7 +26,6 @@ vi ~/.bashrc
 #get the aliases and functions
 if [ -f ~/.bashrc ]; then
         . ~/.bashrc
-
 fi
 #user specific environment and startup programs
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
