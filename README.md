@@ -57,6 +57,26 @@ source  ~/.bashrc
 2. Maven invoker
 
 
+# Go to global tool configuration 
+
+Go to maven and uncheck install-automatically and update the maven home directory path and save 
+
+
+ Go to new iteam and create a maven job
+
+
+ # Installing docker 
+
+ sudo ap-get install docker.io -y
+
+ # Installing ansible 
+
+ sudo apt-get install ansible -y
+
+ 
+
+
+
 
 
 
