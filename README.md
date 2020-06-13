@@ -70,10 +70,12 @@ Go to maven and uncheck install-automatically and update the maven home director
  sudo ap-get install docker.io -y
 
  # Installing ansible 
-
- sudo apt-get install ansible -y
-
  
+```sh
+   sudo apt-get install ansible -y
+```
+
+  
 
 
 
