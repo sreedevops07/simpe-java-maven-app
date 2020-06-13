@@ -1,5 +1,6 @@
 # Installing maven
 
+```sh
 cd /opt
 
 wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
@@ -7,21 +8,27 @@ wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.
 tar -xvzf apache-maven-3.6.3-bin.tar.gz
 
 mv apache-maven-3.6.3 maven
-
+```
 
 # Installing JAVA
 
+```sh
 sudo apt update
 
 sudo apt install openjdk-8-jdk
-
+```
 
 # Exporting the path
 
+```sh
 vi ~/.bashrc
+```
+
+
 
 # Add the following configuration 
 
+```sh
 #bash_profile
 #get the aliases and functions
 
@@ -42,6 +49,7 @@ export M2=/opt/maven/bin
 export PATH=$PATH:$HOME/bin/:$JAVA_HOME:$M2:$M2_HOME
 
 export PATH
+```
 
 
 # Save the bashrc 
@@ -67,7 +75,9 @@ Go to maven and uncheck install-automatically and update the maven home director
 
  # Installing docker 
 
- sudo ap-get install docker.io -y
+ ```sh
+   sudo apt-get install docker.io -y
+```
 
  # Installing ansible 
  
