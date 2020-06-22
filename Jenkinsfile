@@ -4,7 +4,6 @@ pipeline {
     stage ('Initialize') {
        steps {
           sh '''
-              sudo source ~/.bash_profile
               echo "PATH = ${PATH}"
               echo "M2_HOME = ${M2_HOME}"
 
