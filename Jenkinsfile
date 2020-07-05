@@ -4,21 +4,6 @@ pipeline {
     maven 'maven'
   }
   stages {
-    stage ('Initialize') {
-       steps {
-          sh '''
-              JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-              M2_HOME=/opt/maven
-              M2=/opt/maven/bin
-              PATH=$PATH:$HOME/bin/:$JAVA_HOME:$M2:$M2_HOME
-              export PATH
-              echo $M2_HOME
-              echo $M2
-              whoami
-              
-             '''
-            }
-        }
     stage('cleaning package') {
       steps {
         sh 'mvn clean install package'
