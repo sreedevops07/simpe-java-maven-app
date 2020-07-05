@@ -11,6 +11,7 @@ pipeline {
               export PATH
               echo $M2_HOME
               echo $M2
+              whoami
               
              '''
             }
