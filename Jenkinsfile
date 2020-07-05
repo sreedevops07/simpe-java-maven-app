@@ -9,6 +9,8 @@ pipeline {
               M2=/opt/maven/bin
               PATH=$PATH:$HOME/bin/:$JAVA_HOME:$M2:$M2_HOME
               export PATH
+              echo $M2_HOME
+              echo $M2
               
              '''
             }
