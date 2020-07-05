@@ -4,7 +4,7 @@ pipeline {
     stage ('Initialize') {
        steps {
           sh '''
-              export M2_HOME=/opt/maven
+              export M2_HOME=/opt/maven/bin
               echo "PATH = ${PATH}"
               echo "M2_HOME = ${M2_HOME}"
               whoami
