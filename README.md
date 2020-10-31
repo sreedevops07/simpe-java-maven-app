@@ -70,7 +70,7 @@ source  ~/.bashrc
 Go to maven and uncheck install-automatically and update the maven home directory path and save 
 
 
- Go to new iteam and create a maven job
+ Go to new the iteam and create a maven job
 
 
  # Installing docker 
