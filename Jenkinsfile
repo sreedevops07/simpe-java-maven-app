@@ -44,15 +44,10 @@ pipeline {
 //     }  
 }
 post {
-    failure {
-        mail to: 'lra9@gmail.com',
-             subject: "Failed Pipeline: ${BUILD_NUMBER}",
-             body: "Something is wrong with ${env.BUILD_URL}"
-    }
-     success {
-        mail to: 'lprudra9@gmail.com',
-             subject: "successful Pipeline:  ${env.BUILD_NUMBER}",
-             body: "Your pipeline is success ${env.BUILD_URL}"
+     always {
+       emailext to: 'lprudra9@gmail.com',
+       attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
+       subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
     }
 }
 }
