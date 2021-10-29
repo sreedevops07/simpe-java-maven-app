@@ -2,4 +2,4 @@
   become: true
   tasks:
     - name: copy war file from jenkins to tomcat server
-      shell: cp -R webapp/target/webapp.war /opt/tomcat/webapps/
+      shell: cp -R /var/lib/jenkins/workspace/jaava_pipeline/webapp/target/webapp.war /opt/tomcat/webapps/
