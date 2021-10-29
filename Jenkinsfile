@@ -17,7 +17,7 @@ pipeline {
                 '''
             }
         }
-    stage('cleaning package') {
+    stage('Build app') {
       steps {
         sh 'mvn clean install package'
       }
@@ -25,6 +25,12 @@ pipeline {
     stage('Push Artifact to S3') {
       steps {
         sh 'aws s3 cp webapp/target/webapp.war s3://demo-kops'
+      }
+    }
+    
+    stage('Deploy to tomcat') {
+      steps {
+        sh 'ansible-playbook deploy-new.yml'
       }
     }
 //     stage('building docker image from docker file by tagging') {
