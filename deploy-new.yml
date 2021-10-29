@@ -1,0 +1,5 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: copy war file from jenkins to tomcat server
+      shell: cp -R webapp/target/webapp.war /opt/tomcat/webapps/
