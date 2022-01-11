@@ -28,11 +28,11 @@ pipeline {
       }
     }
     
-//     stage('Deploy to tomcat') {
-//       steps {
-//         sh 'ansible-playbook deploy-new.yml'
-//       }
-//     }
+    stage('Deploy to tomcat') {
+      steps {
+        sh 'scp -i jenkins.pem webapp/target/webapp.war ubuntu@13.234.37.132:/home/ubuntu/'
+      }
+    }
 //     stage('building docker image from docker file by tagging') {
 //       steps {
 //         sh 'docker build -t phanirudra9/phani9-devops:$BUILD_NUMBER .'
