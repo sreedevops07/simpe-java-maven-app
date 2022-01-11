@@ -24,15 +24,15 @@ pipeline {
     }
     stage('Push Artifact to S3') {
       steps {
-        sh 'aws s3 cp webapp/target/webapp.war s3://demo-kops'
+        sh 'aws s3 cp webapp/target/webapp.war s3://demo-swhizz-1'
       }
     }
     
-    stage('Deploy to tomcat') {
-      steps {
-        sh 'ansible-playbook deploy-new.yml'
-      }
-    }
+//     stage('Deploy to tomcat') {
+//       steps {
+//         sh 'ansible-playbook deploy-new.yml'
+//       }
+//     }
 //     stage('building docker image from docker file by tagging') {
 //       steps {
 //         sh 'docker build -t phanirudra9/phani9-devops:$BUILD_NUMBER .'
@@ -54,11 +54,11 @@ pipeline {
 //       }   
 //     }  
 }
-post {
-     always {
-       emailext to: 'lprudra9@gmail.com',
-       attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
-       subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
-    }
-}
+// post {
+//      always {
+//        emailext to: 'lprudra9@gmail.com',
+//        attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
+//        subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
+//     }
+// }
 }
