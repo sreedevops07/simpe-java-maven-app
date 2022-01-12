@@ -53,7 +53,7 @@ pipeline {
 //         sh 'ansible-playbook deploy.yml --extra-vars="buildNumber=$BUILD_NUMBER"'
 //       }   
 //     }  
-// }
+}
 post {
      always {
        emailext to: 'lprudra9@gmail.com',
