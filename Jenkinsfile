@@ -28,16 +28,16 @@ pipeline {
       }
     }
     
-    stage('Deploy to tomcat') {
-      steps {
-        sh 'sudo scp -i $tomcat_key -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@18.191.57.72:/opt/tomcat/webapps'
-      }
-    }
-//     stage('building docker image from docker file by tagging') {
+//     stage('Deploy to tomcat') {
 //       steps {
-//         sh 'docker build -t phanirudra9/phani9-devops:$BUILD_NUMBER .'
-//       }   
+//         sh 'sudo scp -i $tomcat_key -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@18.191.57.72:/opt/tomcat/webapps'
+//       }
 //     }
+    stage('building docker image from docker file by tagging') {
+      steps {
+        sh 'docker build -t phanirudra9/phani9-devops:$BUILD_NUMBER .'
+      }   
+    }
 //     stage('logging into docker hub') {
 //       steps {
 //         sh 'docker login --username="phanirudra9" --password="9eb876d4@A"'
