@@ -48,11 +48,11 @@ pipeline {
         sh 'docker push phanirudra9/phani9-devops:$BUILD_NUMBER'
       }   
     }
-//     stage('deploying the docker image into EC2 instance and run the container') {
-//       steps {
-//         sh 'ansible-playbook deploy.yml --extra-vars="buildNumber=$BUILD_NUMBER"'
-//       }   
-//     }  
+    stage('deploying the docker image into EC2 instance and run the container') {
+      steps {
+        sh 'ansible-playbook deploy.yml --extra-vars="buildNumber=$BUILD_NUMBER"'
+      }   
+    }  
 }
 post {
      always {
