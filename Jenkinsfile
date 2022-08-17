@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Push Artifact to S3') {
       steps {
-        sh 'aws s3 cp webapp/target/webapp.war s3://s3artifact_demo9'
+        sh 'aws s3 cp webapp/target/webapp.war s3://s3artifact-demo9'
       }
     }
     
